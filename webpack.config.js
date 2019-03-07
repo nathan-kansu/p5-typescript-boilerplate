@@ -28,7 +28,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "P5-TS"
+      title: "P5.js Typescript boilerplate"
     })
   ],
   output: {

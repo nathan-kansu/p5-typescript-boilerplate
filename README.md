@@ -1,2 +1,3 @@
-# p5-ts
-P5.js boilerplate with Typescript and Webpack
+# p5-typescript-boilerplate
+
+P5.js boilerplate with Typescript support and Webpack enabled.
