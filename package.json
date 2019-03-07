@@ -1,0 +1,21 @@
+{
+  "name": "p5-ts",
+  "version": "1.0.0",
+  "description": "P5.js boilerplate with Typescript and Webpack",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathan-kansu/p5-ts.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/nathan-kansu/p5-ts#readme",
+  "devDependencies": {
+    "@types/p5": "^0.7.2",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}
