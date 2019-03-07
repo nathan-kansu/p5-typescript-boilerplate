@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "P5.js boilerplate with Typescript and Webpack",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack",
+    "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,8 +15,12 @@
   "homepage": "https://github.com/nathan-kansu/p5-ts#readme",
   "devDependencies": {
     "@types/p5": "^0.7.2",
+    "clean-webpack-plugin": "^2.0.0",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
     "typescript": "^3.3.3333",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   }
 }
