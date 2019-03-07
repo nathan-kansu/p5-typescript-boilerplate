@@ -22,7 +22,8 @@ module.exports = {
   },
   devtool: "inline-source-map",
   devServer: {
-    contentBase: "./dist"
+    contentBase: "./dist",
+    hot: true
   },
   plugins: [
     new CleanWebpackPlugin(),
