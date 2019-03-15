@@ -1,4 +1,5 @@
 import * as p5 from "p5";
+import "./style.css";
 
 const sketch = (p5: p5) => {
   p5.setup = () => {};
