@@ -1,4 +1,7 @@
 import * as p5 from "p5";
+import Shapes from "./Shapes";
+import { ShapesInterface } from "./interfaces";
+
 import {
   CANVAS_HEIGHT,
   CANVAS_ID,
@@ -17,20 +20,27 @@ const sketch = (p5: p5) => {
   });
   let canvas: HTMLElement | null;
   let exportAnimation: Boolean = false;
+  let shapes: ShapesInterface;
 
   p5.setup = () => {
     p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
     p5.background(COLOR_BACKGROUND);
     p5.frameRate(FRAME_RATE);
     canvas = document.getElementById(CANVAS_ID);
+    shapes = new Shapes(p5);
 
-    if (exportAnimation) {
-      capturer.start();
+    shapes.render();
+
+    if (exportAnimation && canvas) {
+      capturer.capture(canvas);
+      capturer.stop();
+      capturer.save();
+      p5.noLoop();
     }
   };
 
   p5.draw = () => {
-    p5.ellipse(50, 50, 80, 80);
+    shapes.render();
 
     if (exportAnimation) {
       if (canvas) {
