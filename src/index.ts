@@ -30,8 +30,8 @@ const sketch = (p5: p5) => {
 
     shapes.render();
 
-    if (exportAnimation && canvas) {
-      capturer.capture(canvas);
+    if (exportAnimation) {
+      capturer.start();
     }
   };
 
