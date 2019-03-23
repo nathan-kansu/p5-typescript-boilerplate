@@ -1,14 +1,28 @@
 import * as p5 from "p5";
 
+import { ShapeInterface } from "./interfaces";
+
 export default class Shapes {
-  private p5: p5;
   public isAnimationComplete: boolean = false;
+  private p5: p5;
+  private shapes: ShapeInterface[] = [];
 
   constructor(p5: p5) {
     this.p5 = p5;
+    this.generateShapes();
   }
 
+  private generateShapes() {}
+
+  private renderShape(shape: ShapeInterface) {}
+
+  private updateShape(shape: ShapeInterface) {}
+
   render = () => {
-    this.p5.ellipse(50, 50, 80, 80);
+    for (let i = 0; i < this.shapes.length; i++) {
+      const shape = this.shapes[i];
+      this.renderShape(shape);
+      this.updateShape(shape);
+    }
   };
 }
