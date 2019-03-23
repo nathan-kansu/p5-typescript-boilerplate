@@ -24,7 +24,6 @@ const sketch = (p5: p5) => {
 
   p5.setup = () => {
     p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
-    p5.background(COLOR_BACKGROUND);
     p5.frameRate(FRAME_RATE);
     canvas = document.getElementById(CANVAS_ID);
     shapes = new Shapes(p5);
@@ -33,13 +32,11 @@ const sketch = (p5: p5) => {
 
     if (exportAnimation && canvas) {
       capturer.capture(canvas);
-      capturer.stop();
-      capturer.save();
-      p5.noLoop();
     }
   };
 
   p5.draw = () => {
+    p5.background(COLOR_BACKGROUND);
     shapes.render();
 
     if (exportAnimation) {
@@ -47,9 +44,11 @@ const sketch = (p5: p5) => {
         capturer.capture(canvas);
       }
 
-      p5.noLoop();
-      capturer.stop();
-      capturer.save();
+      if (shapes.isAnimationComplete) {
+        p5.noLoop();
+        capturer.stop();
+        capturer.save();
+      }
     }
   };
 };

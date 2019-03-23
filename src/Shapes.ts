@@ -16,6 +16,8 @@ export default class Shapes {
 
   private renderShape(shape: ShapeInterface) {}
 
+  private setAnimationCompleteStatus(shapes: ShapeInterface[]) {}
+
   private updateShape(shape: ShapeInterface) {}
 
   render = () => {
@@ -24,5 +26,6 @@ export default class Shapes {
       this.renderShape(shape);
       this.updateShape(shape);
     }
+    this.setAnimationCompleteStatus(this.shapes);
   };
 }
